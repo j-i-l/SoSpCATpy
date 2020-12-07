@@ -29,6 +29,14 @@ def get_groups(
           belongs to.
         * ``'memberlists'``: Dictionary with a list of members `value` for each
           group `key`.
+
+    Returns
+    =======
+    members: list
+      Depending on what was chosen for the `return_form` attribute, either the
+      membership list (i.e. the group affiliation for each node) or the
+      memberlist (i.e. for each group a list of nodes) is returned.
+
     """
     # methods = method.split('_')
     # For now only 'component_infomap' is allowed as procedure
