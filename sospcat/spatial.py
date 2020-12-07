@@ -6,14 +6,15 @@ from sklearn.cluster import KMeans
 
 def get_groups(
         node_locations, nbr_clusters,
-        return_form='membership', random_state=None
+        return_form='membership', random_state=None,
+        **kwargs
         ):
     """
     Perform k-means clustering on the provided node locations.
 
     Parameters
     ==========
-    node_locations: dict(int, tuple)
+    node_locations: dict
       Specify for each node `key` its position `value` in the form of a (x, y)
       tuple.
     nbr_clusters: int
@@ -30,13 +31,27 @@ def get_groups(
         Determines random number generation for centroid initialization. Use
         an int to make the randomness deterministic.
 
+    Returns
+    =======
+    members: dict
+      Depending on what was chosen for the `return_form` attribute, either the
+      membership dict, i.e. for each node (key) the group affiliation (value,
+      or the memberlist dict, i.e. for each group (key) a list of nodes
+      (value) is returned.
+
     """
     nodes = sorted(node_locations.keys())
     positions = [node_locations[n] for n in nodes]
     membership_predict = KMeans(
         n_clusters=nbr_clusters,
-        random_state=random_state
+        random_state=random_state,
+        **kwargs
     ).fit_predict(positions)
+    group_membership = {
+            node: membership_predict[i]
+            for i, node in enumerate(nodes)
+        }
+    # note: could use default dict here
     kmeans_grouping = {i: [] for i in range(nbr_clusters)}
     for i, memb in enumerate(membership_predict):
         kmeans_grouping[memb].append(nodes[i])
@@ -46,6 +61,7 @@ def get_groups(
             for member in members:
                 membership[member] = g
         return membership
+        return group_membership
     elif return_form == 'memberlists':
         return kmeans_grouping
     else:

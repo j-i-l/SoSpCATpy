@@ -32,10 +32,11 @@ def get_groups(
 
     Returns
     =======
-    members: list
+    members: dict
       Depending on what was chosen for the `return_form` attribute, either the
-      membership list (i.e. the group affiliation for each node) or the
-      memberlist (i.e. for each group a list of nodes) is returned.
+      membership dict, i.e. for each node (key) the group affiliation (value,
+      or the memberlist dict, i.e. for each group (key) a list of nodes
+      (value) is returned.
 
     """
     # methods = method.split('_')
@@ -82,13 +83,15 @@ def get_groups(
             except KeyError:
                 group_membership[node_membership[node]] = [node]
     if return_form == 'membership':
-        nbr_nodes = len(a_graph.vs['name'])
-        membership = [None]*nbr_nodes
-        for g, members in group_membership.items():
-            for member in members:
-                membership[member] = g
-        return membership
+        # nbr_nodes = len(a_graph.vs['name'])
+        # membership = [None]*nbr_nodes
+        # for g, members in group_membership.items():
+        #     for member in members:
+        #         membership[member] = g
+        # return membership
+        return node_membership
     elif return_form == 'memberlists':
-        return [_group for _group in group_membership.values()]
+        # return [_group for _group in group_membership.values()]
+        return group_membership
     else:
         return None
