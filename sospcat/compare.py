@@ -6,7 +6,7 @@ from sklearn import metrics
 from .spatial import get_groups as get_spatial_groups
 
 
-def compare_soc_spat(node_locations, soc_membership, **kwargs):
+def social_vs_spatial(node_locations, soc_membership, **kwargs):
     r"""
 
     This method relies on the
