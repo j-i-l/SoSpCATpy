@@ -54,7 +54,29 @@ def install_requires():
     return requires
 
 
+def get_readme(name='README.md'):
+    r"""Return the content of the README file.
+
+    By default it is assumed that the README file is in the same directory as
+    setup.py.
+    The README format is determined via the file extension and should be either
+    `.md` or `.rst`. Any other format will lead to the content being processed
+    as plain text.
+    """
+    with open(os.path.join(here, name), 'r') as fobj:
+        readme_content = fobj.read()
+    if name.endswith('.md'):
+        long_description_content_type = 'text/markdown'
+    elif name.endswith('.rst'):
+        long_description_content_type = 'text/x-rst'
+    else:
+        long_description_content_type = 'text/plain'
+
+    return readme_content, long_description_content_type
+
+
 version, cmdclass = get_version_and_cmdclass("sospcat")
+long_description, long_description_content_type = get_readme()
 
 
 setup(
@@ -63,10 +85,12 @@ setup(
     cmdclass=cmdclass,
     packages=find_packages(),
     description='Social-Spatial Community Assignment Test',
-    url='https://github.com/j-i-l/SoSpCATpy',
+    long_description=long_description,
+    long_description_content_type=long_description_content_type,
+    url='SoSpcATPy.readthedocs.io',
     author='Jonas I. Liechti [aut, cre]',
-    license='BSD-3',
     author_email='jonas.i.liechti@gmail.com',
+    license='BSD-3',
     install_requires=install_requires(),
     keywords='social spatial group cluster groupstructure',
     classifiers=[
@@ -80,5 +104,6 @@ setup(
           'Programming Language :: Python',
           'Topic :: Software Development :: Libraries :: Python Modules',
     ],
+    # include_package_data=True,  # includes whatever is in MANIFEST.in
     # test_suite='tests',
 )
