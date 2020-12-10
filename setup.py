@@ -48,7 +48,7 @@ def read(*parts):
 
 def install_requires():
 
-    requires = ['python-igraph', 'scikit-learn']
+    requires = ['python-igraph', 'scikit-learn', 'numpy']
     # if sys.version_info > (3, 4):
     #     requires.extend(['websockets'])
     return requires
