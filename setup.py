@@ -94,7 +94,7 @@ setup(
     install_requires=install_requires(),
     keywords='social spatial group cluster groupstructure',
     classifiers=[
-          'Intended Audience :: Developers',
+          'Intended Audience :: Science/Research',
           'Development Status :: 5 - Production/Stable',
           'License :: OSI Approved :: BSD License',
           'Operating System :: OS Independent',
@@ -102,7 +102,7 @@ setup(
           'Programming Language :: Python :: 3.7',
           'Programming Language :: Python :: 3.8',
           'Programming Language :: Python',
-          'Topic :: Software Development :: Libraries :: Python Modules',
+          'Topic :: Scientific/Engineering :: Bio-Informatics'
     ],
     # include_package_data=True,  # includes whatever is in MANIFEST.in
     # test_suite='tests',

@@ -13,6 +13,7 @@ Welcome to the SoSpCAT documentation
    :maxdepth: 5
    :caption: Contents:
 
+   README <include_readme.rst>
    example
    _api/sospcat
 

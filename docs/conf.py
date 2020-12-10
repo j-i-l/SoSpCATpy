@@ -71,6 +71,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.extlinks',
     'sphinx.ext.napoleon',
+    'm2r2'
 ]
 
 
@@ -80,7 +81,7 @@ templates_path = ['_templates']
 
 # ############################################################################
 # ############################################################################
-source_suffix = ['.rst', 'md']
+source_suffix = ['.rst', '.md']
 master_doc = 'index'
 todo_include_todos = True
 # ############################################################################
