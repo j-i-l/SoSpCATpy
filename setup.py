@@ -87,7 +87,7 @@ setup(
     description='Social-Spatial Community Assignment Test',
     long_description=long_description,
     long_description_content_type=long_description_content_type,
-    url='SoSpcATPy.readthedocs.io',
+    url='https://SoSpcATPy.readthedocs.io',
     author='Jonas I. Liechti [aut, cre]',
     author_email='jonas.i.liechti@gmail.com',
     license='BSD',
