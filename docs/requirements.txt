@@ -1,0 +1,3 @@
+# requirements for building the docs
+
+m2r2
