@@ -3,7 +3,7 @@ name: Upload tag to PyPi
 on: push
 
 jobs:
-  run action:
+  run-action:
     name: Run Action
     runs-on: ubuntu-latest
     steps:
