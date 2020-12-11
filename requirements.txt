@@ -1,0 +1,3 @@
+python-igraph
+numpy
+scikit-learn

@@ -9,34 +9,49 @@ def get_groups(
         return_form='membership', random_state=None,
         **kwargs
         ):
-    """
+    r"""
     Perform k-means clustering on the provided node locations.
 
     Parameters
     ==========
     node_locations: dict
-      Specify for each node `key` its position `value` in the form of a (x, y)
-      tuple.
+      Specify for each node (key) its position (value) in the form of a tuple,
+      `(x, y)`.
     nbr_clusters: int
       The number of clusters to find.
     return_form: str (default='membership')
         Determines the format of how the social group structure should be
         returned. Options are:
 
-        * ``'membership'``: A list returning for each `index` node the group it
-          belongs to.
-        * ``'memberlists'``: Dictionary with a list of members `value` for each
-          group `key`.
+        * ``'membership'``: A `dict` returning for each node (key) the group it
+          belongs to (value).
+        * ``'memberlists'``: Dictionary with a list of members (value) for each
+          group (key).
     random_state : int, RandomState instance, default=None
         Determines random number generation for centroid initialization. Use
         an int to make the randomness deterministic.
+    **kwargs
+      All keyword arguments forwarded to :class:`sklearn.cluster.KMeans`.
+
 
     Returns
     =======
-    members: dict
+    dict
       Depending on what was chosen for the `return_form` attribute, either the
-      membership dict, i.e. for each node (key) the group affiliation (value,
-      or the memberlist dict, i.e. for each group (key) a list of nodes
+      membership dict, i.e.::
+
+          {
+              node_id: group_id,
+              ...
+          }
+
+      or the memberlist dict, i.e.::
+
+          {
+              group_id: [node1_id, node2_id, ...],
+              ...
+          }
+
       (value) is returned.
 
     """

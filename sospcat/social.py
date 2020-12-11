@@ -13,7 +13,7 @@ def get_groups(
 
     Parameters
     ==========
-    a_graph: :class:`~.igraph.Graph`
+    a_graph: :class:`igraph.Graph`
         The graph to partition
     method: str (default='component_infomap')
         String specifying which method to use. If two methods
@@ -32,10 +32,22 @@ def get_groups(
 
     Returns
     =======
-    members: dict
+    dict
       Depending on what was chosen for the `return_form` attribute, either the
-      membership dict, i.e. for each node (key) the group affiliation (value,
-      or the memberlist dict, i.e. for each group (key) a list of nodes
+      membership dict, i.e.::
+
+          {
+              node_id: group_id,
+              ...
+          }
+
+      or the memberlist dict, i.e.::
+
+          {
+              group_id: [node1_id, node2_id, ...],
+              ...
+          }
+
       (value) is returned.
 
     """

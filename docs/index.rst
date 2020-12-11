@@ -8,12 +8,13 @@ Welcome to the SoSpCAT documentation
 ..
   .. figure:: ../results/simulations_completeness.svg
 
+.. include:: readme_head.rst
 
 .. toctree::
    :maxdepth: 5
    :caption: Contents:
 
-   README <include_readme.rst>
+   readme_body
    example
    _api/sospcat
 

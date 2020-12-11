@@ -23,10 +23,12 @@ def social_vs_spatial(node_locations, soc_membership, **kwargs):
     Parameters
     ==========
     node_locations: dict(int, tuple)
-      Specify for each node `key` its position `value` in the form of a (x, y)
+      Specify for each node (key) its position (value) in the form of a (x, y)
       tuple.
     soc_membership: dict
       Holds for each node (key) the social group affiliation (value).
+    \**kwargs optional parameter:
+      All keyword arguments forwarded to :func:`.spatial.get_groups`
 
     Returns
     =======
