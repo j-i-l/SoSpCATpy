@@ -46,9 +46,9 @@ def read(*parts):
         return fp.read()
 
 
-def install_requires():
-
-    requires = ['python-igraph', 'scikit-learn', 'numpy']
+def install_requires(req_file='requirements.txt'):
+    with open(req_file, 'r') as fobj:
+        requires = fobj.read().splitlines()
     # if sys.version_info > (3, 4):
     #     requires.extend(['websockets'])
     return requires
