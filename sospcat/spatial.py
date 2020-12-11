@@ -9,7 +9,7 @@ def get_groups(
         return_form='membership', random_state=None,
         **kwargs
         ):
-    r"""
+    """
     Perform k-means clustering on the provided node locations.
 
     Parameters

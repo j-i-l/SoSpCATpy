@@ -7,7 +7,7 @@ from .spatial import get_groups as get_spatial_groups
 
 
 def social_vs_spatial(node_locations, soc_membership, **kwargs):
-    r"""
+    """
 
     This method relies on the
     :func:`~.sklearn.metrics.homogeneity_completeness_v_measure` method form
@@ -27,7 +27,7 @@ def social_vs_spatial(node_locations, soc_membership, **kwargs):
       tuple.
     soc_membership: dict
       Holds for each node (key) the social group affiliation (value).
-    \**kwargs optional parameter:
+    **kwargs
       All keyword arguments forwarded to :func:`.spatial.get_groups`
 
     Returns
