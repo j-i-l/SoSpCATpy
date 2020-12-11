@@ -88,6 +88,11 @@ setup(
     long_description=long_description,
     long_description_content_type=long_description_content_type,
     url='https://SoSpcATPy.readthedocs.io',
+    project_urls={
+            "Bug Tracker": "https://github.com/j-i-l/SoSpCATpy/issues",
+            "Documentation": 'https://sospcatpy.readthedocs.io',
+            "Source Code": "https://github.com/j-i-l/SoSpCATpy",
+        },
     author='Jonas I. Liechti [aut, cre]',
     author_email='jonas.i.liechti@gmail.com',
     license='BSD',
